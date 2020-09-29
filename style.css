@@ -1,0 +1,247 @@
+html, body, #principal{
+    height: 100%;
+
+  }
+.item {
+    height: 100%;
+    border: 1px solid black;
+}
+#list{
+    background: url("img/background.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;  
+}
+.viewComment{
+    background-color: rgba(243, 207, 141, 0.76) ;
+    border: black 2px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.viewComment:hover{
+    transform: scale(1.04);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.76);
+    background-color: rgba(243, 161, 141, 0.815) ;
+    border: black 2px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#logo{
+    margin-top: 5px;
+}
+.titre{    
+    margin: 10px 0 10px 0;
+}
+#listResto::-webkit-scrollbar {
+    display: none;
+}
+#listResto{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    height: 70%;
+    overflow-y: auto;
+    
+}
+.textResto{
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+    padding: 5px;
+    background-color: #ffffffb9;
+    padding-bottom: 1px;
+    border: black 2px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgb(255, 255, 255) ;
+}
+.textResto p{
+ overflow: hidden;
+}
+br {
+    content: "";
+    display: block;
+    margin-bottom: 5px;
+}
+#slider-range{
+    padding-left: 50px;
+    margin-top: 7px; 
+    border:2; 
+
+    font-weight:bold;
+}
+#filter{
+    margin: 15px 0 15px 0;
+    padding: 0 20% 0 20%;
+}
+#info{
+    margin: 10px 0 10px 0;
+    background-color: rgba(243, 207, 141, 0.76);
+    padding: 0 10px 1px 10px;
+    border: black 2px solid;
+    border-radius: 5px;
+
+}
+.ui-slider-range{
+    background-color: gray !important;
+}
+.ui-slider-handle{
+    border-color: black !important;
+    border-radius: 90px;
+    background-color: white !important;
+}
+.star-ratings-sprite {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    font-size: 0;
+    height: 21px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 110px;
+    margin-right: 5px;
+
+}
+p{
+    margin-bottom: 0px;
+}
+.star-ratings-sprite-rating {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 21px;
+    display: block;
+}
+#bg-comment{
+    padding: 5px;
+    background-color: #ffffffb9;
+    border-radius: 5px;
+    border: solid black 1px;
+    box-shadow: 0 0 6px white;
+}
+#myModal-addComment{
+    height: auto;
+}
+.modal, .modal-dialog{
+    height: 90%;
+}
+button{
+    color: black;
+    background-color: rgba(243, 207, 141, 0.76) ;
+    border: black 2px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+button:hover{
+    transform: scale(1.04);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.76);
+    background-color: rgba(243, 161, 141, 0.815) ;
+    border: black 2px solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.form-group{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffffffb9;
+    border: black 2px solid;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgb(255, 255, 255)
+}
+.modal-content{
+    height: 100%;
+    background: url("img/background.jpg");
+    background-size: cover;
+}
+.modal-header{
+    height: 8%;
+    padding-bottom: 20px;
+    background-color: rgba(243, 207, 141, 0.76);
+}
+.modal-body{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+    height: 100%;
+    overflow-y: auto;
+}
+.modal-body::-webkit-scrollbar {
+    display: none;
+}
+.modal-footer{
+    height: 10%;
+}
+#myModal-addRestaurant{
+    height: auto;
+}
+.bg-white{
+    padding: 5px;
+    background-color: #ffffffb2 !important;
+    border-radius: 5px;
+    border: solid black 1px;
+    box-shadow: 0 0 6px white;
+    font-weight: bolder;
+}
+#streetView{
+    padding: 10px;
+    height: 30%;
+    width: 70%;
+    margin: auto;
+}
+#info input{
+    width: 20px;
+    text-align: center;
+    font-weight: bolder;
+    background: none;
+    border-style: none;
+}
+#myModal-pushRestaurant{
+    height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .viewComment{
+        width: 30%;
+        text-align: center;
+        font-size: 10px;
+    }
+    #myModal, .modal-dialog{
+        height: 97%;
+    }
+    .item{
+        height: 50%;
+    }
+    #logo{
+      visibility: hidden;
+      height: 0px;
+      margin-top: 0px;  
+    }
+    #list{
+        padding: 0px;
+    }
+    #info{
+        background-color: rgb(243, 207, 141);
+        margin: 0px;
+        border-radius: 0px;
+        top: 0px;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+    }
+    #listResto{
+        height: 100%;
+        overflow: scroll;
+        padding-top: 150px;
+        z-index: 99;
+        
+    }
+    #info h2{
+        font-size: 1.5rem;
+    }
+    #principal{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #listResto{
+        padding-top: 105px;
+    }
+    .avMin{
+        padding-left: 0px;
+    }
+}

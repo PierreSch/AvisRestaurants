@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvisResto</title>
+    <link rel="icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container-fluid">
+    <section id="principal" class="row">        
+      <div id="map" class="item col-md"></div>
+      <div id="list" class="item col-md">
+        <div id="logo" class="row justify-content-center">
+          <img class="col-2 " src="img/logo.png">
+        </div>
+        <div id="info">
+          <h2 class="titre text-center">Liste restaurants disponible:</h2>
+          <div id="filter" class="row justify-content-center">
+            <div class="col text-center avMin">
+              <input disabled type="text" id="averageMin">
+            </div>
+            <div class="col-8" id="slider-range" readonly></div>
+            <div class="col text-center">
+              <input disabled type="text" id="averageMax">
+            </div>
+          </div>
+        </div>
+        <div id="listResto">
+        </div>
+      </div>
+      <div id="myModal-viewComment" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 id="restaurantName" class="modal-title"></h5>
+              </div>
+              <div id="comment" class="modal-body justify-content-center">                     
+              </div>
+             
+                <img id="streetView" src=""> 
+         
+              <div class="modal-footer justify-content-between">
+                <button type="button" data-dismiss="modal">Fermer</button>
+                <button type="button" data-dismiss="modal" id="addComment">Ajouter un commentaire</button>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal fade" id="myModal-addComment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ajouter un commentaire</h5>
+            </div>
+            <div class="modal-body">
+              <form id="formAddComment">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Note:</label>
+                  <select class="form-control" value="-" min="0" max="5" id="ratingAdd">
+                    <option selected>-</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Commentaire:</label>
+                  <textarea id="addCommentTexte" class="form-control" required minlength="3"  maxlength="300" ></textarea>
+                </div>
+                <button type="button" id="push">Envoyer votre commentaire</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal">Fermez</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="myModal-addRestaurant" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <h5 class="modal-title text-center">Ajouter un restaurant</h5>
+            </div>
+            <div class="modal-body justify-content-center">
+              <p class="bg-white text-center">Voulez-vous ajouter un restaurant ?</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" data-dismiss="modal">Non</button>
+              <button id="addRestaurant" type="button" data-dismiss="modal">Oui</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal-pushRestaurant" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ajouter un restaurant</h5>
+            </div>
+            <div class="modal-body">
+              <form id="formAddRestaurants">
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Nom du restaurant:</label>
+                  <input class="form-control" id="addName" required minlength="3"  maxlength="300"></input>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Adresse:</label>
+                  <input class="form-control" id="addAddress"required minlength="3"  maxlength="300"></input>
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Note:</label>
+                  <select class="form-control" id="ratingStars">
+                    <option selected>-</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Commentaire:</label>
+                  <textarea class="form-control" id="commentText"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal">Fermez</button>
+              <button type="button" id="pushRestaurant">Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+                             
+    </section>
+        
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script/function.js"></script>
+    <script src="script/Restaurant.js"></script>
+    <script src="script/Rating.js"></script>
+    <script src="script/init.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5_0A8Y5QisEx9_uAPSPe2cq_DQ1ApEDg&callback=initMap&libraries=places"
+    async defer></script>
+    
+    
+        
+</body>
+
+</html>
