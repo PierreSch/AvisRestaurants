@@ -18,8 +18,8 @@ function transformDom(name, average){
 };
 /**
  * Format all comment of restaurant
- * @param {string} element Restaurant object
- * @returns {string} Format all comment for one restaurant
+ * @param {object} element Restaurant object
+ * @returns {string} HTML comment template for one restaurant
  */
 function showComments(element){
   $("#comment").html("");
@@ -57,7 +57,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
  * Create a url for streetview
  * @param {number} restaurantLat Geolocation coordinates
  * @param {number} restaurantLong Geolocation coordinates
- * @returns {URL} Format url for streetview
+ * @returns {string} Format url for streetview
  */
 function generateStreetView(restaurantLat, restaurantLong){
   let streetLocation = `${restaurantLat},${restaurantLong}`
@@ -116,7 +116,7 @@ function newComment() {
 /**
  * Get the list of restaurants in the json file
  * @param {string} file Url file JSON
- * @returns {} Push list restaurants in the json file in array restaurants
+ * @returns {object} Push list restaurants in the json file in array restaurants
  */
 function getRestaurantByJSON(file){
   $.getJSON(file, function (data) {   
@@ -152,8 +152,8 @@ function getRestaurantByJSON(file){
 }
 /**
  * Add a restaurant to the click on the map
- * @param {url} map Is map of API google
- * @returns Add a restaurant to the array restaurants
+ * @param {object} map Is map of API google
+ * @returns {object} Add a restaurant to the array restaurants
  */
 function addRestaurantByMap(map){
   let restaurantLocation
@@ -206,8 +206,8 @@ function addRestaurantByMap(map){
 }
 /**
  * Filter compared to the average restaurant
- * @param {url} map Is map of API google
- * @returns Show restaurant included in the filter
+ * @param {object} map Is map of API google
+ * @returns {object} Show restaurant included in the filter
  */
 function filterByAverage(map){
   $( "#slider-range" ).slider({
@@ -239,8 +239,8 @@ function filterByAverage(map){
 }
 /**
  * Add restaurant by API Googleplaces
- * @param {url} map Is map of API google
- * @returns Add a restaurant to the array restaurants
+ * @param {object} map Is map of API google
+ * @returns {object} Add a restaurant to the array restaurants
  */
 function addRestaurantByGoogle(map){
   let bounds = map.getBounds()
@@ -297,8 +297,8 @@ function addRestaurantByGoogle(map){
 }
 /**
  * Filter according to the visibility of the restaurants on the map
- * @param {url} map Is map of API google
- * @returns Show resteraurant visible on the map
+ * @param {object} map Is map of API google
+ * @returns {object} Show resteraurant visible on the map
  */
 function filterByMap(map){
   let bounds = map.getBounds()
