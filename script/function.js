@@ -7,7 +7,7 @@
 function transformDom(name, average){
   let templateHTML 
     =   "<div class='row textResto align-items-center'>"
-    +     "<div class='star-ratings-sprite '>"
+    +     "<div class='star-ratings-sprite'>"
     +       `<span id='${name.toLowerCase().replace(/[^a-z]/g,'')}' style='width:${(Math.round((average) * 100) / 10*10)/5}%' class='star-ratings-sprite-rating'></span>`
     +     "</div>"
     +     `<p class='col'><b>${name}</b></p>`
