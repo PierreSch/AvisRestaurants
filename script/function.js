@@ -67,7 +67,6 @@ function generateStreetView(restaurantLat, restaurantLong){
 }
 /**
  * Open comment of restaurant and add new comment
- * @returns New comment
  */
 function newComment() {    
   for (let i = 0; i < markers.length; i++) {
@@ -116,7 +115,6 @@ function newComment() {
 /**
  * Get the list of restaurants in the json file
  * @param {string} file Url file JSON
- * @returns {object} Push list restaurants in the json file in array restaurants
  */
 function getRestaurantByJSON(file){
   $.getJSON(file, function (data) {   
@@ -153,7 +151,6 @@ function getRestaurantByJSON(file){
 /**
  * Add a restaurant to the click on the map
  * @param {object} map Is map of API google
- * @returns {object} Add a restaurant to the array restaurants
  */
 function addRestaurantByMap(map){
   let restaurantLocation
@@ -207,7 +204,6 @@ function addRestaurantByMap(map){
 /**
  * Filter compared to the average restaurant
  * @param {object} map Is map of API google
- * @returns {object} Show restaurant included in the filter
  */
 function filterByAverage(map){
   $( "#slider-range" ).slider({
@@ -240,7 +236,6 @@ function filterByAverage(map){
 /**
  * Add restaurant by API Googleplaces
  * @param {object} map Is map of API google
- * @returns {object} Add a restaurant to the array restaurants
  */
 function addRestaurantByGoogle(map){
   let bounds = map.getBounds()
@@ -298,7 +293,6 @@ function addRestaurantByGoogle(map){
 /**
  * Filter according to the visibility of the restaurants on the map
  * @param {object} map Is map of API google
- * @returns {object} Show resteraurant visible on the map
  */
 function filterByMap(map){
   let bounds = map.getBounds()
