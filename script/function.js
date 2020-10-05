@@ -18,7 +18,7 @@ function transformDom(name, average){
 };
 /**
  * Format all comment of restaurant
- * @param {object} element Restaurant object
+ * @param {Restaurants} element Restaurant object
  * @returns {string} HTML comment template for one restaurant
  */
 function showComments(element){
